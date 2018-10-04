@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Book of Feelings</string>
+    <string name="today_main_page">Add Entry</string>
+    <string name="main_page_history">History</string>
+    <string name="main_page_Stats">Stats</string>
+    <string name="Notes">Notes</string>
+    <string name="delete">Delete</string>
+    <string name="Edit">edit</string>
+    <string name="save">Save</string>
+    <string name="welcome_message">Welcome \n to your \n Book of Feelings</string>
+    <string name="joy_stats">Joy</string>
+    <string name="Angry_stats">Angry</string>
+    <string name="Love_stats">Love</string>
+    <string name="surprised_stats">Surprised</string>
+    <string name="sad_stats">Sad</string>
+    <string name="Fear_stats">Fear</string>
+    <string name="preference_file_key">com.example.dors.bookoffeelings.unique</string>
+</resources>

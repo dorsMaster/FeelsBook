@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:context=".Today">
+
+    <TextView
+        android:id="@+id/dateOfToday"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="1.5">
+
+
+        <ImageButton
+            android:id="@+id/joy"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_004_emoji_3"
+            android:background="@null"
+            android:padding="0dp"
+            android:layout_margin="0dp"
+            android:layout_weight="1"
+            android:onClick="setJoy"/>
+        <ImageButton
+            android:id="@+id/sad"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_003_emoji_2"
+            android:layout_weight="1"
+            android:padding="0dp"
+            android:layout_margin="0dp"
+            android:background="@null"
+            android:onClick="setSad"
+            app:srcCompat="@android:color/darker_gray" />
+
+        <ImageButton
+            android:id="@+id/angry"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="0dp"
+            android:layout_margin="0dp"
+            android:src="@drawable/ic_002_emoji"
+            android:background="@null"
+            android:onClick="setAngry"
+            app:srcCompat="@color/colorPrimaryDark" />
+
+        <ImageButton
+            android:id="@+id/love"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_005_emoji_1"
+            android:padding="0dp"
+            android:layout_margin="0dp"
+            android:background="@null"
+            android:layout_weight="1"
+            android:onClick="setLove" />
+        <ImageButton
+            android:id="@+id/fear"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_006_surprised_1"
+            android:padding="0dp"
+            android:layout_margin="0dp"
+            android:background="@null"
+            android:layout_weight="1"
+            android:onClick="setFear" />
+        <ImageButton
+            android:id="@+id/surprised"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_001_surprised"
+            android:padding="0dp"
+            android:layout_margin="0dp"
+            android:background="@null"
+            android:layout_weight="1"
+            android:onClick="setSurprised"
+            app:srcCompat="@android:color/background_dark" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".5">
+
+        <TextView
+            android:id="@+id/notesTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:baselineAligned="false"
+            android:textSize="20sp"
+            android:ems="10"
+            android:text="@string/Notes" />
+    </LinearLayout>
+
+
+
+    <EditText
+        android:id="@+id/plain_text_input"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:lines="12"
+        android:maxLines="14"
+        android:scrollHorizontally="false"
+        android:minLines="9"
+        android:layout_weight="6"/>
+
+
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:onClick="saveData"
+        android:textSize="21sp"
+        android:layout_margin="8dp"
+        android:text="@string/save"
+        tools:ignore="InefficientWeight" />
+
+
+
+</android.support.v7.widget.LinearLayoutCompat>

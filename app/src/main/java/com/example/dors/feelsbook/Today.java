@@ -187,7 +187,9 @@ public class Today extends AppCompatActivity {
         Log.d("THIS_YEAR", String.valueOf(Calendar.getInstance().get(Calendar.YEAR)));
 
         if((Integer.valueOf(mEdit.getText().toString()) > 0) && (Integer.valueOf(mEdit.getText().toString()) < 13)
-
+                && mEdit.getText().toString().length() == 2 && minEdit.getText().toString().length() == 2
+                && yEdit.getText().toString().length() == 4 && hEdit.getText().toString().length() == 2
+                && secEdit.getText().toString().length() == 2 && dEdit.getText().toString().length() == 2
                 && (Integer.valueOf(dEdit.getText().toString()) > 0) && (Integer.valueOf(dEdit.getText().toString()) <= 31)
                 && (Integer.valueOf(hEdit.getText().toString()) < 24) && (Integer.valueOf(hEdit.getText().toString()) >= 0)
                 && (Integer.valueOf(yEdit.getText().toString()) <= (Calendar.getInstance().get(Calendar.YEAR))) && (Integer.valueOf(yEdit.getText().toString()) >= 0)
@@ -203,12 +205,14 @@ public class Today extends AppCompatActivity {
         }
         if  (mEdit.getText().toString().length() != 2 && minEdit.getText().toString().length() != 2
                 && yEdit.getText().toString().length() != 4 && hEdit.getText().toString().length() != 2
-                && secEdit.getText().toString().length() != 2 && dEdit.getText().toString().length() != 2){
+                && secEdit.getText().toString().length() != 2 && dEdit.getText().toString().length() != 2)
+        {
             Toast.makeText(this, "Please use the 'YYYY MM DD HH mm SS' format!", Toast.LENGTH_LONG).show();
 
         }
-        else{
-            Toast.makeText(this, "Date or Time is not correct!", Toast.LENGTH_LONG).show();
+        else
+            {
+            Toast.makeText(this, "Date or Time is not correct! Please use the YYYY MM DD HH mm SS", Toast.LENGTH_LONG).show();
         }
     }
 

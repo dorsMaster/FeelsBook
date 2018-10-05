@@ -45,7 +45,6 @@ public class Today extends AppCompatActivity {
         joy = findViewById(R.id.joy);
         surprised = findViewById(R.id.surprised);
         fear = findViewById(R.id.fear);
-        love = findViewById(R.id.love);
         sad = findViewById(R.id.sad);
         context = this;
         hasDate = false;

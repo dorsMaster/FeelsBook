@@ -6,19 +6,107 @@
     android:layout_height="match_parent"
     android:background="@android:color/background_light"
     android:orientation="vertical"
-    android:weightSum="10"
+    android:weightSum="9"
     tools:context=".Today">
 
-    <TextView
-        android:id="@+id/dateOfToday"
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:gravity="center"
-        android:textSize="20sp"
         android:layout_height="0dp"
+        android:weightSum="2"
         android:orientation="horizontal"
         android:layout_weight="1">
 
-    </TextView>
+
+        <EditText
+            android:id="@+id/yEdit"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".5"
+            android:ems="10"
+            android:maxLength="4"
+            android:enabled="false"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/mEdit"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".25"
+            android:ems="10"
+            android:maxLength="2"
+            android:enabled="false"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/dEdit"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".25"
+            android:ems="10"
+            android:maxLength="2"
+            android:enabled="false"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/hourEdit"
+            android:enabled="false"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".4"
+            android:maxLength="2"
+            android:ems="10"
+            android:inputType="time" />
+
+        <EditText
+            android:id="@+id/minEdit"
+            android:enabled="false"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".3"
+            android:ems="10"
+            android:maxLength="2"
+            android:inputType="time" />
+        <EditText
+            android:id="@+id/secEdit"
+            android:enabled="false"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".3"
+            android:ems="10"
+            android:maxLength="2"
+            android:inputType="time" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".5">
+
+        <TextView
+            android:id="@+id/notesTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:baselineAligned="false"
+            android:textSize="20sp"
+            android:ems="10"
+            android:text="@string/Notes" />
+    </LinearLayout>
+
+
+
+    <EditText
+        android:id="@+id/plain_text_input"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:lines="12"
+        android:maxLines="14"
+        android:scrollHorizontally="false"
+        android:minLines="9"
+        android:layout_weight="6"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -94,49 +182,6 @@
             app:srcCompat="@android:color/background_dark" />
 
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight=".5">
-
-        <TextView
-            android:id="@+id/notesTitle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:baselineAligned="false"
-            android:textSize="20sp"
-            android:ems="10"
-            android:text="@string/Notes" />
-    </LinearLayout>
-
-
-
-    <EditText
-        android:id="@+id/plain_text_input"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:gravity="top"
-        android:inputType="textMultiLine"
-        android:lines="12"
-        android:maxLines="14"
-        android:scrollHorizontally="false"
-        android:minLines="9"
-        android:layout_weight="6"/>
-
-
-
-    <Button
-        android:id="@+id/saveButton"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:onClick="saveData"
-        android:textSize="21sp"
-        android:layout_margin="8dp"
-        android:text="@string/save"
-        tools:ignore="InefficientWeight" />
 
 
 

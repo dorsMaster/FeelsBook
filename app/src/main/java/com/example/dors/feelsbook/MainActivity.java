@@ -1,13 +1,13 @@
 package com.example.dors.feelsbook;
 
-        import android.support.v7.app.AppCompatActivity;
-        import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 
-        import android.content.Intent;
-        import android.support.v7.app.AppCompatActivity;
-        import android.os.Bundle;
-        import android.view.View;
-        import android.widget.Button;
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-//    public void changeToHistoryActivity(View view) {
+    //    public void changeToHistoryActivity(View view) {
 //        startActivities(new Intent[]{new Intent(MainActivity.this, Calendar.class)});
 //    }
     public void changeToStatsActivity(View view) {

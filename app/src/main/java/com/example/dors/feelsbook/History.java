@@ -66,13 +66,17 @@ public class History extends AppCompatActivity {
 //            String Myentry = String.valueOf(entry).substring(0,13);
 //            SimpleDateFormat myFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 //            String formatted_entry = String.format(Myentry, myFormat);
-            String formatted_entry = String.valueOf(entry).substring(0,4)+'/'+ String.valueOf(entry).substring(4,6)+'/'+ String.valueOf(entry).substring(6,8) + ' '+ String.valueOf(entry).substring(8,10)+':'+ String.valueOf(entry).substring(10,12)+':' +String.valueOf(entry).substring(12,14);
+            String formatted_entry = String.valueOf(entry).substring(0,4)+'/'+ String.valueOf(entry).substring(4,6)+'/'+ String.valueOf(entry).substring(6,8) + ' '+ String.valueOf(entry).substring(8,10)+':'+ String.valueOf(entry).substring(10,12)+':'+String.valueOf(entry).substring(12,14)+" - "+ feeling(String.valueOf(entry).substring(15,16));
             myEnteries.add(formatted_entry);
             navEnteries.add(String.valueOf(entry));
         }
 
+
+        Collections.sort(myEnteries);
+        Collections.sort(navEnteries);
         Collections.reverse(myEnteries);
         Collections.reverse(navEnteries);
+
         adapter = new ArrayAdapter<String>(this, R.layout.single_item,myEnteries);
         listView = findViewById(R.id.ListOfItems);
         listView.setAdapter(adapter);
@@ -86,17 +90,30 @@ public class History extends AppCompatActivity {
                 Intent intent = new Intent(getBaseContext(), HistoryEdit.class);
                 intent.putExtra(MESSAGE_DATE,dateToShow);
                 intent.putExtra(EXTRA_MESSAGE,readData(dateToInspect));
-                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
-                finish();
-
             }
         });
 
 
+    }
 
-
+    private String feeling(String s){
+        switch (s){
+            case "1":
+                return "Sad";
+            case "2":
+                return "Angry";
+            case "3":
+                return "Joy";
+            case "4":
+                return "Surprised";
+            case "5":
+                return "Love";
+            case "6":
+                return "Fear";
+            default:
+                return "N/A";
+        }
     }
 
 }

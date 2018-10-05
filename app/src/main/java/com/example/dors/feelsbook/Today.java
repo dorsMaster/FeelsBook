@@ -136,7 +136,7 @@ public class Today extends AppCompatActivity {
     }
 
     /**
-     * sclaes the emoji
+     * claes the emoji
      * @param emojiVal
      */
     public void SetEmojiButton(String emojiVal){
@@ -184,7 +184,13 @@ public class Today extends AppCompatActivity {
         String key = yEdit.getText().toString() + mEdit.getText().toString()+dEdit.getText().toString()+hEdit.getText().toString()+minEdit.getText().toString()+secEdit.getText().toString();
         SharedPreferences sharedPref = this.getSharedPreferences(getString(R.string.preference_file_key),Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
-        if(Integer.valueOf(mEdit.getText().toString())>0 && Integer.valueOf(mEdit.getText().toString())<13 && Integer.valueOf(dEdit.getText().toString())>0 && Integer.valueOf(dEdit.getText().toString())<31 && Integer.valueOf(hEdit.getText().toString())<24 && Integer.valueOf(minEdit.getText().toString())>=0 && Integer.valueOf(minEdit.getText().toString())<60) {
+        Log.d("THIS_YEAR", String.valueOf(Calendar.getInstance().get(Calendar.YEAR)));
+
+        if((Integer.valueOf(mEdit.getText().toString()) > 0) && (Integer.valueOf(mEdit.getText().toString()) < 13)
+                && (Integer.valueOf(dEdit.getText().toString()) > 0) && (Integer.valueOf(dEdit.getText().toString()) <= 31)
+                && (Integer.valueOf(hEdit.getText().toString()) < 24) && (Integer.valueOf(hEdit.getText().toString()) >= 0)
+                && (Integer.valueOf(yEdit.getText().toString()) <= (Calendar.getInstance().get(Calendar.YEAR))) && (Integer.valueOf(yEdit.getText().toString()) >= 0)
+                && (Integer.valueOf(minEdit.getText().toString()) >= 0) && (Integer.valueOf(minEdit.getText().toString()) < 60)) {
             if (hasDate) {
                 editor.remove(intentDate);
             }

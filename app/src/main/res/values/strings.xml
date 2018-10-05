@@ -15,4 +15,6 @@
     <string name="sad_stats">Sad</string>
     <string name="Fear_stats">Fear</string>
     <string name="preference_file_key">com.example.dors.bookoffeelings.unique</string>
+    <string name="semiColon">:</string>
+    <string name="slash">/</string>
 </resources>

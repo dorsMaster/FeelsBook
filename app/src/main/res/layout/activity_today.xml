@@ -22,60 +22,106 @@
             android:id="@+id/yEdit"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight=".5"
+            android:layout_weight=".4"
+            android:textAlignment="center"
             android:ems="10"
             android:maxLength="4"
             android:enabled="false"
             android:inputType="number" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".05"
+            android:text="@string/slash"
+            android:paddingTop="27sp"
+            android:textColor="@color/colorPrimary"
+            android:textAlignment="center"
+            android:enabled="false" />
 
         <EditText
             android:id="@+id/mEdit"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight=".25"
+            android:textAlignment="center"
             android:ems="10"
             android:maxLength="2"
             android:enabled="false"
             android:inputType="number" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".05"
+            android:text="@string/slash"
+            android:paddingTop="27sp"
+            android:textColor="@color/colorPrimary"
+            android:textAlignment="center"
+            android:enabled="false" />
 
         <EditText
             android:id="@+id/dEdit"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight=".25"
+            android:textAlignment="center"
             android:ems="10"
             android:maxLength="2"
             android:enabled="false"
             android:inputType="number" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".15"
+            android:ems="10"
+            android:maxLength="2"
+            android:enabled="false" />
 
         <EditText
             android:id="@+id/hourEdit"
             android:enabled="false"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight=".4"
+            android:layout_weight=".25"
+            android:textAlignment="center"
             android:maxLength="2"
             android:ems="10"
             android:inputType="time" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".05"
+            android:text="@string/semiColon"
+            android:paddingTop="20sp"
+            android:textColor="@color/colorPrimary"
+            android:textAlignment="gravity"
+            android:enabled="false" />
 
         <EditText
             android:id="@+id/minEdit"
             android:enabled="false"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight=".3"
+            android:layout_weight=".25"
+            android:textAlignment="center"
             android:ems="10"
             android:maxLength="2"
             android:inputType="time" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".05"
+            android:text="@string/semiColon"
+            android:paddingTop="20sp"
+            android:textColor="@color/colorPrimary"
+            android:textAlignment="center"
+            android:enabled="false" />
         <EditText
             android:id="@+id/secEdit"
             android:enabled="false"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight=".3"
-            android:ems="10"
-            android:maxLength="2"
-            android:inputType="time" />
+            android:layout_weight=".25"
+            android:textAlignment="center" />
     </LinearLayout>
 
     <LinearLayout

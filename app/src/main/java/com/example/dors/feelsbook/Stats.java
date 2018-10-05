@@ -16,6 +16,10 @@ public class Stats extends AppCompatActivity {
     private SharedPreferences.Editor sharedPrefsEditor;
     int angry, fear, surprised, love, joy, sad = 0;
 
+    /**
+     * gets data from shared pref, and maps the value of the emotion, and counts them
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

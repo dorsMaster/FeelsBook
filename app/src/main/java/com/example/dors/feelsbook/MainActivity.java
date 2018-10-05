@@ -10,25 +10,36 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-
+    /**
+     * makes the activity to be defaulted as activity_main
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
 
+    /**
+     * once clicked it changes the activity
+     * @param view
+     */
     public void changeToTodayActivity(View view) {
         startActivities(new Intent[]{new Intent(MainActivity.this, Today.class)});
-
     }
 
-
-    //    public void changeToHistoryActivity(View view) {
-//        startActivities(new Intent[]{new Intent(MainActivity.this, Calendar.class)});
-//    }
+    /**
+     * once clicked it changes the activity
+     * @param view
+     */
     public void changeToStatsActivity(View view) {
         startActivities(new Intent[]{new Intent(MainActivity.this, Stats.class)});
     }
+
+    /**
+     * once clicked it changes the activity
+     * @param view
+     */
     public void changeToHistoryActivity(View view) {
         startActivities(new Intent[]{new Intent(MainActivity.this, History.class)});
     }

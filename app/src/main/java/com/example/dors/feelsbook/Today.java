@@ -33,7 +33,10 @@ public class Today extends AppCompatActivity {
     private EditText yEdit,mEdit,dEdit,hEdit,minEdit,secEdit;
 
 
-
+    /**
+     * To set up the date format and the text boxes
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,8 +50,6 @@ public class Today extends AppCompatActivity {
         context = this;
         hasDate = false;
         txt= findViewById(R.id.plain_text_input);
-//        saveButton = findViewById(R.id.saveButton);
-//        saveButton.setClickable(false);
         Bundle extras = getIntent().getExtras();
         DateFormat ydateFormat = new SimpleDateFormat("yyyy", Locale.CANADA);
         DateFormat mdateFormat = new SimpleDateFormat("MM", Locale.CANADA);
@@ -134,7 +135,10 @@ public class Today extends AppCompatActivity {
 
     }
 
-
+    /**
+     * sclaes the emoji
+     * @param emojiVal
+     */
     public void SetEmojiButton(String emojiVal){
         switch (emojiVal){
             case "1":
@@ -160,14 +164,20 @@ public class Today extends AppCompatActivity {
         }
     }
 
-
+    /**
+     * to read data from the shared preferences
+     * @param date
+     * @return
+     */
     public String readData(String date) {
         SharedPreferences sharedPref = this.getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
         String value = sharedPref.getString(date," ");
         return value;
     }
 
-
+    /**
+     * saves the new set of data
+     */
     public void saveData (){
         int emotion = this.emotion;
         String input =  String.valueOf(emotion)+ txt.getText().toString();
@@ -188,11 +198,13 @@ public class Today extends AppCompatActivity {
         }
     }
 
+    /**
+     * makes the motion chosen bigger and creates some animation
+     * @param view
+     */
     public void setSurprised(View view) {
         emotion = 4;
         saveData();
-
-//        saveButton.setClickable(true);
         surprised.setScaleType(ImageView.ScaleType.FIT_CENTER);
         sad.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
         joy.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
@@ -203,9 +215,12 @@ public class Today extends AppCompatActivity {
 
     }
 
+    /**
+     * makes the motion chosen bigger and creates some animation
+     * @param view
+     */
     public void setAngry(View view) {
         emotion = 2;
-//        saveButton.setClickable(true);
         saveData();
         angry.setScaleType(ImageView.ScaleType.FIT_CENTER);
         sad.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
@@ -214,12 +229,13 @@ public class Today extends AppCompatActivity {
         surprised.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
         fear.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
     }
-
+    /**
+     * makes the motion chosen bigger and creates some animation
+     * @param view
+     */
     public void setFear(View view) {
         emotion = 6;
         saveData();
-
-//        saveButton.setClickable(true);
         fear.setScaleType(ImageView.ScaleType.FIT_CENTER);
         sad.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
         joy.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
@@ -227,12 +243,13 @@ public class Today extends AppCompatActivity {
         angry.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
         surprised.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
     }
-
+    /**
+     * makes the motion chosen bigger and creates some animation
+     * @param view
+     */
     public void setLove(View view) {
         emotion = 5;
         saveData();
-
-//        saveButton.setClickable(true);
         love.setScaleType(ImageView.ScaleType.FIT_CENTER);
         sad.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
         joy.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
@@ -240,12 +257,13 @@ public class Today extends AppCompatActivity {
         angry.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
         fear.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
     }
-
+    /**
+     * makes the motion chosen bigger and creates some animation
+     * @param view
+     */
     public void setSad(View view) {
         emotion = 1;
         saveData();
-
-//        saveButton.setClickable(true);
         sad.setScaleType(ImageView.ScaleType.FIT_CENTER);
         surprised.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
         joy.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
@@ -254,11 +272,13 @@ public class Today extends AppCompatActivity {
         fear.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
 
     }
-
+    /**
+     * makes the motion chosen bigger and creates some animation
+     * @param view
+     */
     public void setJoy(View view) {
         emotion = 3;
         saveData();
-//        saveButton.setClickable(true);
         joy.setScaleType(ImageView.ScaleType.FIT_CENTER);
         sad.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
         surprised.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
@@ -267,6 +287,10 @@ public class Today extends AppCompatActivity {
         fear.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
     }
 
+    /**
+     * goes to the next acitivity after clicking
+     * @param nextActivity
+     */
     public void goToNextActivity(Class nextActivity) {
         Intent intent = new Intent(this, nextActivity);
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);

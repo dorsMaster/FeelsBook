@@ -38,8 +38,13 @@ public class History extends AppCompatActivity {
     String dateToShow;
     String dateToInspect;
 
+    /**
+     * to read data from the shared preference and make it accessible to this class
+     * @param date
+     * @return
+     */
+
     public String readData(String date) {
-//        TODO inmplement a try and catch error
         SharedPreferences sharedPref = this.getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
         String value = sharedPref.getString(date," ");
         Log.d("READDATA",value);
@@ -47,9 +52,10 @@ public class History extends AppCompatActivity {
 
     }
 
-
-
-
+    /**
+     * To create a list and sort through it
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,9 +69,6 @@ public class History extends AppCompatActivity {
 
         Map<String, ?> allEntries = sharedPref.getAll();
         for (Map.Entry<String, ?> entry : allEntries.entrySet()) {
-//            String Myentry = String.valueOf(entry).substring(0,13);
-//            SimpleDateFormat myFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-//            String formatted_entry = String.format(Myentry, myFormat);
             String formatted_entry = String.valueOf(entry).substring(0,4)+'/'+ String.valueOf(entry).substring(4,6)+'/'+ String.valueOf(entry).substring(6,8) + ' '+ String.valueOf(entry).substring(8,10)+':'+ String.valueOf(entry).substring(10,12)+':'+String.valueOf(entry).substring(12,14)+" - "+ feeling(String.valueOf(entry).substring(15,16));
             myEnteries.add(formatted_entry);
             navEnteries.add(String.valueOf(entry));
@@ -86,7 +89,6 @@ public class History extends AppCompatActivity {
                 Log.d("ONITEM", navEnteries.get(position));
                 dateToShow = myEnteries.get(position);
                 dateToInspect = (navEnteries.get(position)).substring(0,14);
-//                Log.d("ONITEM", String.valueOf(((TextView)view).getText()));
                 Intent intent = new Intent(getBaseContext(), HistoryEdit.class);
                 intent.putExtra(MESSAGE_DATE,dateToShow);
                 intent.putExtra(EXTRA_MESSAGE,readData(dateToInspect));
@@ -97,6 +99,11 @@ public class History extends AppCompatActivity {
 
     }
 
+    /**
+     * switch between the number associcated to the emotion and the emotion
+     * @param s
+     * @return the feeling according to the emotion
+     */
     private String feeling(String s){
         switch (s){
             case "1":

@@ -12,21 +12,18 @@ import android.widget.TextView;
 
 public class HistoryEdit extends AppCompatActivity {
 
-    /*
-emotion 1: Sad
-emotion 2: Angry
-emotion 3: Joy
-emotion 4: Surprised
-emotion 5: Love
-emotion 6: Fear
-assertTrue("empty days list ", days.size()==0);
-*/
     private SharedPreferences sharedPrefs;
     private SharedPreferences.Editor sharedPrefsEditor;
     private final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
     private final String MESSAGE_DATE = "com.example.myfirstapp.DATE";
     private String date;
     private  String message;
+
+    /**
+     * To edit data and save it again
+     * @param view
+     */
+
     public void editData(View view) {
         Intent intent = new Intent(getBaseContext(), Today.class);
         intent.putExtra(MESSAGE_DATE,date);
@@ -35,6 +32,11 @@ assertTrue("empty days list ", days.size()==0);
         startActivity(intent);
         finish();
     }
+
+    /**
+     * to delete data
+     * @param view
+     */
     public void deleteData(View view) {
         String tmpDate = date.replace("/","");
         tmpDate = tmpDate.replace(" ","");
@@ -45,6 +47,10 @@ assertTrue("empty days list ", days.size()==0);
         finish();
     }
 
+    /**
+     * creates and replaces the emotions with an emoji
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,16 +87,6 @@ assertTrue("empty days list ", days.size()==0);
         }
 
 
-                /*
-        emotion 1: Sad
-        emotion 2: Angry
-        emotion 3: Joy
-        emotion 4: Surprised
-        emotion 5: Love
-        emotion 6: Fear
-        assertTrue("empty days list ", days.size()==0);
-*/
-
         // Capture the layout's TextView and set the string as its text
         TextView textView = findViewById(R.id.plain_text_input_history);
         TextView historyDate = findViewById(R.id.historyDate);
@@ -99,6 +95,11 @@ assertTrue("empty days list ", days.size()==0);
         textView.setText(message.substring(1,message.length()));
 
     }
+
+    /**
+     * Goes to the next activity and closes the current one
+     * @param nextActivity
+     */
     public void goToNextActivity(Class nextActivity) {
         Intent intent = new Intent(this, nextActivity);
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
